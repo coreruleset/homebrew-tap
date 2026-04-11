@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: homebrew/actions/setup-homebrew@master
+
+      - name: Audit and style-check casks
+        run: |
+          shopt -s nullglob
+          casks=(Casks/*.rb)
+          if [[ ${#casks[@]} -eq 0 ]]; then
+            echo "No cask files found, skipping audit."
+            exit 0
+          fi
+          brew audit --cask "${casks[@]}"
+          brew style "${casks[@]}"
