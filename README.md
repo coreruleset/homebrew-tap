@@ -15,19 +15,19 @@ brew tap coreruleset/tap
 Then install a tool, for example `crs-toolchain`:
 
 ```sh
-brew install --cask crs-toolchain
+brew install crs-toolchain
 ```
 
 ## Upgrade
 
 ```sh
-brew upgrade --cask crs-toolchain
+brew upgrade crs-toolchain
 ```
 
 ## Uninstall
 
 ```sh
-brew uninstall --cask crs-toolchain
+brew uninstall crs-toolchain
 ```
 
 To also remove the tap:
