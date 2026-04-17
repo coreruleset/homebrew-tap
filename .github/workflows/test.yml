@@ -13,19 +13,24 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    # 'steps' must align with 'permissions'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
-
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      
       - name: Set up Homebrew
-        uses: homebrew/actions/setup-homebrew@59e6b20d96df1a3c9ccb0aa402676e01a4cc6ff3 # ratchet:homebrew/actions/setup-homebrew@master
+        uses: homebrew/actions/setup-homebrew@59e6b20d96df1a3c9ccb0aa402676e01a4cc6ff3
 
       - name: Audit and style-check casks
+        env:
+          CASK_FILES: "Casks/*.rb"
         run: |
           shopt -s nullglob
-          casks=(Casks/*.rb)
-          if [[ ${#casks[@]} -eq 0 ]]; then
-            echo "No cask files found, skipping audit."
+          files=($CASK_FILES)
+          
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo "No cask files found."
             exit 0
           fi
-          brew audit --cask "${casks[@]}"
-          brew style "${casks[@]}"
+          
+          brew audit --cask "${files[@]}"
+          brew style "${files[@]}"
