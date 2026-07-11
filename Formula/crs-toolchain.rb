@@ -5,21 +5,21 @@
 class CrsToolchain < Formula
   desc "CRS developer's utility belt"
   homepage "https://github.com/coreruleset/crs-toolchain"
-  version "2.9.0"
+  version "2.10.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.9.0/crs-toolchain_2.9.0_darwin_amd64.tar.gz"
-      sha256 "8cea1394fd006ff281f87b8ed24554e94e4766ea120920dc7419ac7f54bd0636"
+      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.10.0/crs-toolchain_2.10.0_darwin_amd64.tar.gz"
+      sha256 "a568717368c6951aba5c21e6f2540d37bebbbed371f935d455a73303dbab1fe6"
 
       define_method(:install) do
         bin.install "crs-toolchain"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.9.0/crs-toolchain_2.9.0_darwin_arm64.tar.gz"
-      sha256 "aa675550e95c33bd919ef0f66778538f07365434fe329c726e7c03c69d680df4"
+      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.10.0/crs-toolchain_2.10.0_darwin_arm64.tar.gz"
+      sha256 "5ab01a7acc94429a33a75a8280d3034b4f9f067c8a034d1466478bb898d63475"
 
       define_method(:install) do
         bin.install "crs-toolchain"
@@ -29,15 +29,15 @@ class CrsToolchain < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.9.0/crs-toolchain_2.9.0_linux_amd64.tar.gz"
-      sha256 "9c5c1b0d6941d35ab52d1483f0ea8b9a191e0f11b437cb54dbc22fb6b9bdd3d1"
+      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.10.0/crs-toolchain_2.10.0_linux_amd64.tar.gz"
+      sha256 "d4d0716b6b3461d76c0f62f864a85a495d67c7477a83b9af46bd8d509d2b5a21"
       define_method(:install) do
         bin.install "crs-toolchain"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.9.0/crs-toolchain_2.9.0_linux_arm64.tar.gz"
-      sha256 "c0ea6fda873e4d5fa82fa645531374800bb60b373ef95ac4ee61bc16f022a394"
+      url "https://github.com/coreruleset/crs-toolchain/releases/download/v2.10.0/crs-toolchain_2.10.0_linux_arm64.tar.gz"
+      sha256 "5cf18676e19c7177f62cc349b8ef38978d6cd6bfa9800b67e55ee2218b415568"
       define_method(:install) do
         bin.install "crs-toolchain"
       end
