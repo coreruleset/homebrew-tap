@@ -5,21 +5,21 @@
 class GoFtw < Formula
   desc "Framework for Testing WAFs - Go version"
   homepage "https://github.com/coreruleset/go-ftw"
-  version "2.6.2"
+  version "2.7.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/coreruleset/go-ftw/releases/download/v2.6.2/ftw_2.6.2_darwin_amd64.tar.gz"
-      sha256 "dc739a0a18fbb34211655be60adb706a45f7b3ef7d91a142f560d55551a30502"
+      url "https://github.com/coreruleset/go-ftw/releases/download/v2.7.0/ftw_2.7.0_darwin_amd64.tar.gz"
+      sha256 "2278942c929b0e08ae39842314ff2c3cb340e0c8c3803b8ba199293529513a19"
 
       define_method(:install) do
         bin.install "ftw"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/coreruleset/go-ftw/releases/download/v2.6.2/ftw_2.6.2_darwin_arm64.tar.gz"
-      sha256 "a6fdba1b934c051391eafabce6ee54bd1b960fbc794ad97d6ba040e8744fb2c5"
+      url "https://github.com/coreruleset/go-ftw/releases/download/v2.7.0/ftw_2.7.0_darwin_arm64.tar.gz"
+      sha256 "49ed6c10780d4b0fdee01f72e208b87d199f4953538b01e7449cb97109bb3f05"
 
       define_method(:install) do
         bin.install "ftw"
@@ -29,15 +29,15 @@ class GoFtw < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreruleset/go-ftw/releases/download/v2.6.2/ftw_2.6.2_linux_amd64.tar.gz"
-      sha256 "f5e04bf64e395719ef9c11fef1288930fffcb621917fe05db076a13a6464f0f3"
+      url "https://github.com/coreruleset/go-ftw/releases/download/v2.7.0/ftw_2.7.0_linux_amd64.tar.gz"
+      sha256 "c2dfdbe87b3aa6d939a8718c7630deeee6b437b442acd82b4b5b2421fdaacbe8"
       define_method(:install) do
         bin.install "ftw"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreruleset/go-ftw/releases/download/v2.6.2/ftw_2.6.2_linux_arm64.tar.gz"
-      sha256 "cf22cd460bec6b171438067479295fb6dea477490de0f03099ddfd7237643083"
+      url "https://github.com/coreruleset/go-ftw/releases/download/v2.7.0/ftw_2.7.0_linux_arm64.tar.gz"
+      sha256 "76fa1f672174194664434d6302a17eed0d5c10a646265415a988ef21d84a5405"
       define_method(:install) do
         bin.install "ftw"
       end
